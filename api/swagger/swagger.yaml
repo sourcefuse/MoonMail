@@ -368,7 +368,8 @@ securityDefinitions:
     type: apiKey
     name: Authorization
     in: header
-    description: 'Authorization header - Bearer [Token]'
+    description: >-
+      'Authorization header. api_key value should contain: Bearer ${JsonWebToken}. Separated by space'
 parameters:
   Page:
     name: page
