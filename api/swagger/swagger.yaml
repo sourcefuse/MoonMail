@@ -424,7 +424,7 @@ parameters:
   RecipientsFilter:
     name: filter
     in: query
-    description: one of subscribed, unsubscribed, awaiting, bounsed, spam
+    description: one of subscribed, unsubscribed, awaiting, bounced, spam
     type: string
   RecipientId:
     name: recipientId
@@ -520,7 +520,7 @@ definitions:
     description: one of draft, pending, sending, sent, quotaExceeded
   RecipientStatus:
     type: string
-    description: one of subscribed, unsubscribed, awaiting, bounsed, spam
+    description: one of subscribed, unsubscribed, awaiting, bounced, spam
   Date:
     type: integer
     format: int32
