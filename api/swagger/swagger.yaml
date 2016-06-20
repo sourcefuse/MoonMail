@@ -1,7 +1,7 @@
 swagger: '2.0'
 info:
   version: 1.0.0
-  title: MoonMail
+  title: MoonMail-v2 
 host: mkre901l1e.execute-api.us-east-1.amazonaws.com
 basePath: /dev
 schemes:
