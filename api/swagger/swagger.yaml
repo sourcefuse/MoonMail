@@ -384,7 +384,7 @@ parameters:
     name: include_fields
     in: query
     description: >-
-      if true field names in fields parameter would be included in, otherwise
+      if true field names in fields parameter would be included in response, otherwise
       excluded
     type: boolean
   CampaignId:
@@ -500,6 +500,7 @@ definitions:
   Date:
     type: integer
     format: int32
+    description: timestamp in unix format
   Subject:
     type: string
   ListIds:
