@@ -71,6 +71,8 @@ paths:
         - Campaign
       parameters:
         - $ref: '#/parameters/CampaignId'
+        - $ref: '#/parameters/Fields'
+        - $ref: '#/parameters/IncludeFields'
       responses:
         '200':
           description: Success
@@ -168,6 +170,10 @@ paths:
     get:
       tags: 
         - Lists
+      parameters:
+        - $ref: '#/parameters/Fields'
+        - $ref: '#/parameters/IncludeFields'
+        - $ref: '#/parameters/Page'
       responses:
         '200':
           description: Success
@@ -210,6 +216,8 @@ paths:
         - List
       parameters:
         - $ref: '#/parameters/ListId'
+        - $ref: '#/parameters/Fields'
+        - $ref: '#/parameters/IncludeFields'
       responses:
         '200':
           description: Success
@@ -260,6 +268,9 @@ paths:
         - Recipients
       parameters:
         - $ref: '#/parameters/ListId'
+        - $ref: '#/parameters/Fields'
+        - $ref: '#/parameters/IncludeFields'
+        - $ref: '#/parameters/Page'
       responses:
         '200':
           description: Success
@@ -304,6 +315,8 @@ paths:
       parameters:
         - $ref: '#/parameters/ListId'
         - $ref: '#/parameters/RecipientId'
+        - $ref: '#/parameters/Fields'
+        - $ref: '#/parameters/IncludeFields'
       responses:
         '200':
           description: Success
@@ -511,11 +524,6 @@ definitions:
         $ref: '#/definitions/Date'
       sentAt:
         $ref: '#/definitions/Date'
-    example:
-      id: cipfl7c85000001qgupg20f06
-      sentAt: 1463384971
-      name: Sent campaign
-      status: sent
   FullCampaign:
     type: object
     required:
@@ -540,15 +548,6 @@ definitions:
         $ref: '#/definitions/ListIds'
       body:
         $ref: '#/definitions/Body'
-    example:
-      id: cipfl7c85000001qgupg20f06
-      subject: My first campaign
-      sentAt: 1463384971
-      listIds:
-        - cipfl6dj6000101npvezbbmiy
-      name: Test campaign
-      body: Test campaign body
-      status: sent
   CreateCampaignData:
     type: object
     required:
@@ -556,8 +555,6 @@ definitions:
     properties:
       name:
         $ref: '#/definitions/Name'
-    example:
-      name: Test campaign
   UpdateCampaignData:
     type: object
     properties:
@@ -569,11 +566,6 @@ definitions:
         $ref: '#/definitions/ListIds'
       body:
         $ref: '#/definitions/Body'
-    example:
-      subject: My first campaign
-      listIds:
-        - cipfl6dj6000101npvezbbmiy
-      body: Test campaign body
   List:
     type: object
     required:
@@ -591,11 +583,6 @@ definitions:
       recipientsCount:
         type: integer
         format: int32
-    example:
-      id: cipfl7c85000001qgupg20f06
-      createdAtAt: 1463384971
-      name: New list
-      recipientsCount: 1234
   CreateListData:
     type: object
     required:
@@ -603,8 +590,6 @@ definitions:
     properties:
       name:
         $ref: '#/definitions/Name'
-    example:
-      name: Test list
   UpdateListData:
     type: object
     properties:
