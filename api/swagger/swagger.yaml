@@ -12,10 +12,19 @@ consumes:
   - application/json
 security:
   - Bearer: []
+tags: 
+  - name: Campaigns
+  - name: Campaign
+  - name: Lists
+  - name: List
+  - name: Recipients
+  - name: Recipient
+  - name: Links
 paths:
   /campaigns:
     get:
-      summary: Get all user Campaigns
+      tags: 
+        - Campaigns
       parameters:
         - $ref: '#/parameters/Fields'
         - $ref: '#/parameters/IncludeFields'
@@ -41,6 +50,8 @@ paths:
         default:
           $ref: '#/responses/GeneralError'
     post:
+      tags: 
+        - Campaigns
       parameters:
         - $ref: '#/parameters/CreateCampaign'
       responses:
@@ -56,6 +67,8 @@ paths:
           $ref: '#/responses/GeneralError'
   '/campaigns/{campaignId}':
     get:
+      tags: 
+        - Campaign
       parameters:
         - $ref: '#/parameters/CampaignId'
       responses:
@@ -70,6 +83,8 @@ paths:
         default:
           $ref: '#/responses/GeneralError'
     delete:
+      tags: 
+        - Campaign
       parameters:
         - $ref: '#/parameters/CampaignId'
       responses:
@@ -84,6 +99,8 @@ paths:
         default:
           $ref: '#/responses/GeneralError'
     patch:
+      tags: 
+        - Campaign
       parameters:
         - $ref: '#/parameters/CampaignId'
         - $ref: '#/parameters/UpdateCampaign'
@@ -100,6 +117,8 @@ paths:
           $ref: '#/responses/GeneralError'
   '/campaigns/{campaignId}/send':
     post:
+      tags: 
+        - Campaign
       parameters:
         - $ref: '#/parameters/CampaignId'
         - $ref: '#/parameters/UpdateCampaign'
@@ -116,6 +135,8 @@ paths:
           $ref: '#/responses/GeneralError'
   '/links/click/{campaignId}/{linkId}':
     get:
+      tags: 
+        - Links
       parameters:
         - $ref: '#/parameters/CampaignId'
         - $ref: '#/parameters/LinkId'
@@ -132,6 +153,8 @@ paths:
           $ref: '#/responses/GeneralError'
   '/links/open/{campaignId}':
     get:
+      tags: 
+        - Links
       parameters:
         - $ref: '#/parameters/CampaignId'
       responses:
@@ -143,6 +166,8 @@ paths:
           description: 400 response
   /lists:
     get:
+      tags: 
+        - Lists
       responses:
         '200':
           description: Success
@@ -164,6 +189,8 @@ paths:
         default:
           $ref: '#/responses/GeneralError'
     post:
+      tags: 
+        - Lists
       parameters:
         - $ref: '#/parameters/CreateList'
       responses:
@@ -179,6 +206,8 @@ paths:
           $ref: '#/responses/GeneralError'
   '/lists/{listId}':
     get:
+      tags: 
+        - List
       parameters:
         - $ref: '#/parameters/ListId'
       responses:
@@ -193,6 +222,8 @@ paths:
         default:
           $ref: '#/responses/GeneralError'
     delete:
+      tags: 
+        - List
       parameters:
         - $ref: '#/parameters/ListId'
       responses:
@@ -207,6 +238,8 @@ paths:
         default:
           $ref: '#/responses/GeneralError'
     patch:
+      tags: 
+        - List
       parameters:
         - $ref: '#/parameters/ListId'
         - $ref: '#/parameters/UpdateList'
@@ -223,6 +256,8 @@ paths:
           $ref: '#/responses/GeneralError'
   '/lists/{listId}/recipients':
     get:
+      tags: 
+        - Recipients
       parameters:
         - $ref: '#/parameters/ListId'
       responses:
@@ -246,6 +281,8 @@ paths:
         default:
           $ref: '#/responses/GeneralError'
     post:
+      tags: 
+        - Recipients
       parameters:
         - $ref: '#/parameters/ListId'
         - $ref: '#/parameters/CreateRecipient'
@@ -262,6 +299,8 @@ paths:
           $ref: '#/responses/GeneralError'
   '/lists/{listId}/recipients/{recipientId}':
     get:
+      tags: 
+        - Recipient
       parameters:
         - $ref: '#/parameters/ListId'
         - $ref: '#/parameters/RecipientId'
@@ -277,6 +316,8 @@ paths:
         default:
           $ref: '#/responses/GeneralError'
     delete:
+      tags: 
+        - Recipient
       parameters:
         - $ref: '#/parameters/ListId'
         - $ref: '#/parameters/RecipientId'
@@ -292,6 +333,8 @@ paths:
         default:
           $ref: '#/responses/GeneralError'
     patch:
+      tags: 
+        - Recipient
       parameters:
         - $ref: '#/parameters/ListId'
         - $ref: '#/parameters/RecipientId'
