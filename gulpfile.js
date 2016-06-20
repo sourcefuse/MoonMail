@@ -3,7 +3,7 @@ const yaml = require('gulp-yaml');
 const connect = require('gulp-connect');
 const yamlPath = './api/swagger/swagger.yaml';
 
-gulp.task('default', ['connect', 'watch']);
+gulp.task('default', ['connect', 'yaml2json', 'watch']);
 
 gulp.task('watch', function() {
     gulp.watch(yamlPath, ['yaml2json']);
