@@ -16,13 +16,12 @@ gulp.task('yaml2json', function() {
             console.log(error);
             this.emit('end')
         })
-        .pipe(gulp.dest('./public/'))
+        .pipe(gulp.dest('./'))
         .pipe(connect.reload())
 });
 
 gulp.task('connect', function() {
     connect.server({
-        root: 'public',
         livereload: true
     });
 });
