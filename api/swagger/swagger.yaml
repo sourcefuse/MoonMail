@@ -38,7 +38,7 @@ paths:
               items:
                 type: array
                 items:
-                  $ref: '#/definitions/Campaign'
+                  $ref: '#/definitions/FullCampaign'
               nextPage:
                 $ref: '#/definitions/NextPage'
               prevPage:
@@ -129,6 +129,23 @@ paths:
           description: Success
           schema:
             $ref: '#/definitions/Campaign'
+        '401':
+          $ref: '#/responses/AuthError'
+        '422':
+          $ref: '#/responses/UncrossableEntity'
+        default:
+          $ref: '#/responses/GeneralError'
+  '/campaigns/{campaignId}/duplicate':
+    post:
+      tags: 
+        - Campaign
+      parameters:
+        - $ref: '#/parameters/CampaignId'
+      responses:
+        '200':
+          description: Success
+          schema:
+            $ref: '#/definitions/FullCampaign'
         '401':
           $ref: '#/responses/AuthError'
         '422':
@@ -270,6 +287,7 @@ paths:
         - $ref: '#/parameters/ListId'
         - $ref: '#/parameters/Fields'
         - $ref: '#/parameters/IncludeFields'
+        - $ref: '#/parameters/RecipientsFilter'
         - $ref: '#/parameters/Page'
       responses:
         '200':
@@ -403,6 +421,11 @@ parameters:
     in: path
     required: true
     type: string
+  RecipientsFilter:
+    name: filter
+    in: query
+    description: one of subscribed, unsubscribed, awaiting, bounsed, spam
+    type: string
   RecipientId:
     name: recipientId
     in: path
@@ -494,10 +517,10 @@ definitions:
     type: string
   CampaignStatus:
     type: string
-    description: 'one of draft, pending, sending, sent, quotaExceeded'
+    description: one of draft, pending, sending, sent, quotaExceeded
   RecipientStatus:
     type: string
-    description: 'one of subscribed, unsubscribed, awaiting, bounsed, spam'
+    description: one of subscribed, unsubscribed, awaiting, bounsed, spam
   Date:
     type: integer
     format: int32
