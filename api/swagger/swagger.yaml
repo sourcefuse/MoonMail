@@ -14,11 +14,8 @@ security:
   - Bearer: []
 tags: 
   - name: Campaigns
-  - name: Campaign
   - name: Lists
-  - name: List
   - name: Recipients
-  - name: Recipient
   - name: Links
 paths:
   /campaigns:
@@ -68,7 +65,7 @@ paths:
   '/campaigns/{campaignId}':
     get:
       tags: 
-        - Campaign
+        - Campaigns
       parameters:
         - $ref: '#/parameters/CampaignId'
         - $ref: '#/parameters/Fields'
@@ -86,7 +83,7 @@ paths:
           $ref: '#/responses/GeneralError'
     delete:
       tags: 
-        - Campaign
+        - Campaigns
       parameters:
         - $ref: '#/parameters/CampaignId'
       responses:
@@ -102,7 +99,7 @@ paths:
           $ref: '#/responses/GeneralError'
     patch:
       tags: 
-        - Campaign
+        - Campaigns
       parameters:
         - $ref: '#/parameters/CampaignId'
         - $ref: '#/parameters/UpdateCampaign'
@@ -120,7 +117,7 @@ paths:
   '/campaigns/{campaignId}/send':
     post:
       tags: 
-        - Campaign
+        - Campaigns
       parameters:
         - $ref: '#/parameters/CampaignId'
         - $ref: '#/parameters/UpdateCampaign'
@@ -138,7 +135,7 @@ paths:
   '/campaigns/{campaignId}/duplicate':
     post:
       tags: 
-        - Campaign
+        - Campaigns
       parameters:
         - $ref: '#/parameters/CampaignId'
       responses:
@@ -230,7 +227,7 @@ paths:
   '/lists/{listId}':
     get:
       tags: 
-        - List
+        - Lists
       parameters:
         - $ref: '#/parameters/ListId'
         - $ref: '#/parameters/Fields'
@@ -248,7 +245,7 @@ paths:
           $ref: '#/responses/GeneralError'
     delete:
       tags: 
-        - List
+        - Lists
       parameters:
         - $ref: '#/parameters/ListId'
       responses:
@@ -264,7 +261,7 @@ paths:
           $ref: '#/responses/GeneralError'
     patch:
       tags: 
-        - List
+        - Lists
       parameters:
         - $ref: '#/parameters/ListId'
         - $ref: '#/parameters/UpdateList'
@@ -329,7 +326,7 @@ paths:
   '/lists/{listId}/recipients/{recipientId}':
     get:
       tags: 
-        - Recipient
+        - Recipients
       parameters:
         - $ref: '#/parameters/ListId'
         - $ref: '#/parameters/RecipientId'
@@ -348,7 +345,7 @@ paths:
           $ref: '#/responses/GeneralError'
     delete:
       tags: 
-        - Recipient
+        - Recipients
       parameters:
         - $ref: '#/parameters/ListId'
         - $ref: '#/parameters/RecipientId'
@@ -365,7 +362,7 @@ paths:
           $ref: '#/responses/GeneralError'
     patch:
       tags: 
-        - Recipient
+        - Recipients
       parameters:
         - $ref: '#/parameters/ListId'
         - $ref: '#/parameters/RecipientId'

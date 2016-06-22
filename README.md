@@ -6,4 +6,4 @@
 ## Then run 
 ```npm install```   
 ```npm start``` - for starting docs server   
-```swagger project edit``` - for live editing docs
+```npm run edit``` - for live editing docs
