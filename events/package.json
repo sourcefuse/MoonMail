@@ -59,7 +59,7 @@
     "moonmail-models": "github:microapps/moonmail-models",
     "nock": "^9.0.2",
     "omit-empty": "^0.4.1",
-    "ramda": "^0.22.1",
+    "ramda": "^0.27.1",
     "saws": "^0.1.0",
     "serverless-helpers-js": "~0.1.0",
     "uid-generator": "^0.1.1",
